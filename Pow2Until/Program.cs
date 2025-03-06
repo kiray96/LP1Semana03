@@ -14,6 +14,7 @@ namespace Pow2Until
         
         private static void Main(string[] args)
         {
+            //Chamar o metodo a partir do main 
             PowersOf2Until5();
             PowersOf2Until5();
         }
