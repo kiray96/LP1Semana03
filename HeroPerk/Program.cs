@@ -35,15 +35,23 @@ namespace HeroPerk
                 }
             }
 
+
             if (unknown)
             {
                 Console.WriteLine("!Unknown perk!");
             }
             else
             {
-                Console.WriteLine(perks);
-            }
-            
+                if(perks == 0)
+                {
+                    Console.WriteLine("!No perks at all!");
+                }
+
+                else
+                {
+                    Console.WriteLine(perks);
+                } 
+            }    
         }
     }
 }
