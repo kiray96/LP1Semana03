@@ -7,6 +7,7 @@ namespace HeroPerk
         private static void Main(string[] args)
         {
             Perks perks = 0;
+            bool unknown = false;
             String inputs = args[0];
 
             foreach(char input in inputs)
@@ -27,9 +28,22 @@ namespace HeroPerk
                 {
                     perks ^= Perks.DoubleJump;
                 }
+                else
+                {
+                    unknown = true;
+                    break;
+                }
             }
 
-            Console.WriteLine(perks);
+            if (unknown)
+            {
+                Console.WriteLine("!Unknown perk!");
+            }
+            else
+            {
+                Console.WriteLine(perks);
+            }
+            
         }
     }
 }
