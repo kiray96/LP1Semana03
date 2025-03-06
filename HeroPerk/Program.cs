@@ -7,8 +7,10 @@ namespace HeroPerk
         private static void Main(string[] args)
         {
             Perks perks = 0;
+            Perks silentJumper = Perks.Stealth | Perks.DoubleJump;
             bool unknown = false;
             String inputs = args[0];
+
 
             foreach(char input in inputs)
             {
@@ -51,6 +53,16 @@ namespace HeroPerk
                 {
                     Console.WriteLine(perks);
                 } 
+
+                if ((perks & silentJumper) == silentJumper)
+                {
+                    Console.WriteLine("!Silent jumper!");
+                }
+
+                if ((perks & Perks.AutoHeal) != Perks.AutoHeal)
+                {
+                    Console.WriteLine("!Not gonna make it!");
+                }
             }    
         }
     }
