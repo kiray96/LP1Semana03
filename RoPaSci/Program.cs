@@ -6,7 +6,10 @@ namespace RoPaSci
     {
         private static void Main(string[] args)
         {
-            int result = RockPaperScissors(args[0], args[1]);
+            GameItem player1 = Enum.Parse<GameItem>(args[0]);
+            GameItem player2 = Enum.Parse<GameItem>(args[1]);
+
+            int result = RockPaperScissors(player1, player2);
             switch (result)
             {
                 case 0:
@@ -21,7 +24,7 @@ namespace RoPaSci
             }
         }
 
-        private static int RockPaperScissors(string player1, string player2)
+        private static int RockPaperScissors(GameItem player1, GameItem player2)
         {
             int  result;
 
@@ -29,9 +32,9 @@ namespace RoPaSci
             {
                 result = 0; // Draw
             }
-            if (((player1 == "Rock") && (player2 == "Scissors")) ||
-                ((player1 == "Scissors") && (player2 == "Paper")) ||
-                ((player1 == "Paper") && (player2 == "Rock")))
+            if (((player1 == GameItem.Rock) && (player2 == GameItem.Scissors)) ||
+                ((player1 == GameItem.Scissors) && (player2 == GameItem.Paper)) ||
+                ((player1 == GameItem.Paper) && (player2 == GameItem.Rock)))
             {
                 result = 1; // Player 1 wins
             }
